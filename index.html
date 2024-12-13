@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Story AI</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .sidebar {
+            background-color: #6c757d;
+            color: white;
+            height: 100vh;
+            position: fixed;
+            width: 250px;
+            overflow-y: auto;
+        }
+        .sidebar h3 {
+            padding: 1rem;
+            text-align: center;
+            background-color: #495057;
+        }
+        .sidebar img {
+            width: 100%;
+            margin-bottom: 1rem;
+        }
+        .main-content {
+            margin-left: 250px;
+            padding: 2rem;
+        }
+        .header {
+            color: #343a40;
+            padding: 1rem;
+            text-align: center;
+        }
+        
+        .story-box {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        #saved-outputs a {
+    display: block;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #612A9F;
+    border-radius: 5px;
+    color: white;
+    transition: background-color 0.3s;
+}
+
+#saved-outputs a:hover {
+    background-color: #343a40;
+    text-decoration: none;
+}
+
+        /* Media query for smaller screens */
+@media (max-width: 768px) { 
+    .story-box {
+        padding: 1.5rem; /* Reduce padding */
+    }
+}
+
+@media (max-width: 576px) {
+    .story-box {
+        padding: 1rem; /* Further reduce padding */
+        border-radius: 5px; /* Smaller border radius */
+    }
+}
+    </style>
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h3>Story AI</h3>
+        <ul class="list-unstyled p-3">
+            <li><a href="index.html" class="text-white text-decoration-none active">Home</a></li>
+            <li><a href="saved-outputs.html" class="text-white text-decoration-none">View Saved Story</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Header -->
+        <div class="header">
+            <h1>Story AI</h1>
+        </div>
+        
+        <!-- Story Box -->
+        <div class="story-box">
+          <p class="output">(Ask Something..)</p>
+             <form>
+                <div class="prompt-box">
+                <input id="prompt" name="prompt" placeholder="Enter instructions here" type="text" value="">
+                  <button type="submit">Go</button>           
+
+                </div>
+            </form> 
+            <button id="save-button" class="btn btn-secondary mt-3">Save Output</button>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="/main.js"></script>
+</body>
+</html>
